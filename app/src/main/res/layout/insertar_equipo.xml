@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <AbsoluteLayout
+        android:layout_width="414dp"
+        android:layout_height="731dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="414dp"
+            android:layout_height="731dp"
+            android:layout_x="2dp"
+            android:layout_y="1dp"
+            app:srcCompat="@mipmap/jc2" />
+
+        <EditText
+            android:id="@+id/pts_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="122dp"
+            android:layout_y="366dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="escribir puntos"
+            android:textColor="#C1FF8400" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="122dp"
+            android:layout_y="256dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="escribir foto"
+            android:textColor="#C1FF8400" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="119dp"
+            android:layout_y="147dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="escribir ciudad"
+            android:textColor="#C1FF8400" />
+
+        <TextView
+            android:id="@+id/puntos_insert"
+            android:layout_width="92dp"
+            android:layout_height="47dp"
+            android:layout_x="22dp"
+            android:layout_y="366dp"
+            android:backgroundTint="@color/white"
+            android:foregroundTint="@color/white"
+            android:text="Puntos"
+            android:textColor="#F30606" />
+
+        <TextView
+            android:id="@+id/foto_insert"
+            android:layout_width="92dp"
+            android:layout_height="47dp"
+            android:layout_x="21dp"
+            android:layout_y="255dp"
+            android:backgroundTint="@color/white"
+            android:foregroundTint="@color/white"
+            android:text="Foto"
+            android:textColor="#F30606" />
+
+        <TextView
+            android:id="@+id/ciudad_insert"
+            android:layout_width="92dp"
+            android:layout_height="47dp"
+            android:layout_x="20dp"
+            android:layout_y="147dp"
+            android:backgroundTint="@color/white"
+            android:foregroundTint="@color/white"
+            android:text="Ciudad "
+            android:textColor="#F30606" />
+
+        <Button
+            android:id="@+id/insertar"
+            android:layout_width="241dp"
+            android:layout_height="wrap_content"
+            android:layout_x="83dp"
+            android:layout_y="626dp"
+            android:backgroundTint="#000000"
+            android:text="ANADIR" />
+
+        <TextView
+            android:id="@+id/nomb_insert"
+            android:layout_width="92dp"
+            android:layout_height="47dp"
+            android:layout_x="19dp"
+            android:layout_y="47dp"
+            android:backgroundTint="@color/white"
+            android:foregroundTint="@color/white"
+            android:text="Nombre"
+            android:textColor="#F30606" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="119dp"
+            android:layout_y="47dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="escribir nombre"
+            android:textColor="#C1FF8400" />
+
+    </AbsoluteLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
