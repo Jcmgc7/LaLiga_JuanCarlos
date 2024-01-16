@@ -17,4 +17,5 @@ public class IniciarSesion extends AppCompatActivity {
     public void registro(View view) {
         startActivity(new Intent(IniciarSesion.this, Registrarse.class));
     }
+
 }
