@@ -15,6 +15,10 @@ public class Login extends AppCompatActivity {
     }
 
     public void Inicar(View view) {
+
         startActivity(new Intent(Login.this, IniciarSesion.class));
+    }
+    public void registro(View view) {
+        startActivity(new Intent(Login.this, Registrarse.class));
     }
 }
