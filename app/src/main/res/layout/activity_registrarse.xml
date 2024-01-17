@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#EC0909"
     android:foregroundTint="#FD0000"
-    tools:context=".IniciarSesion">
+    tools:context=".Registrarse">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,18 +22,18 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="90dp"
-            android:layout_y="364dp"
+            android:layout_x="103dp"
+            android:layout_y="367dp"
             android:text="Contraseña:"
             android:textColor="#000000"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/edit1"
+            android:id="@+id/usuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="92dp"
-            android:layout_y="270dp"
+            android:layout_x="101dp"
+            android:layout_y="273dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -42,8 +42,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="92dp"
-            android:layout_y="234dp"
+            android:layout_x="103dp"
+            android:layout_y="236dp"
             android:backgroundTint="#EF0000"
             android:text="Usuario:"
             android:textColor="#000000"
@@ -53,8 +53,8 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="116dp"
-            android:layout_y="555dp"
+            android:layout_x="128dp"
+            android:layout_y="561dp"
             android:onClick="iniciar"
             android:text="Iniciar sesion" />
 
@@ -62,8 +62,8 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="130dp"
-            android:layout_y="501dp"
+            android:layout_x="141dp"
+            android:layout_y="502dp"
             android:onClick="registrarse"
             android:text="registrase" />
 
@@ -71,8 +71,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="92dp"
-            android:layout_y="302dp"
+            android:layout_x="105dp"
+            android:layout_y="301dp"
             android:text="Correo:"
             android:textColor="#000000"
             android:textSize="20sp" />
@@ -81,8 +81,8 @@
             android:id="@+id/gmail1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="92dp"
-            android:layout_y="331dp"
+            android:layout_x="102dp"
+            android:layout_y="335dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textEmailAddress" />
@@ -91,28 +91,28 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="94dp"
-            android:layout_y="428dp"
+            android:layout_x="101dp"
+            android:layout_y="431dp"
             android:text="Confirmar Contraseña:"
             android:textColor="#000000"
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/contraseña2"
+            android:id="@+id/contrasena2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="94dp"
-            android:layout_y="465dp"
+            android:layout_x="103dp"
+            android:layout_y="466dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/contraseña1"
+            android:id="@+id/contrasena1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="92dp"
-            android:layout_y="396dp"
+            android:layout_x="101dp"
+            android:layout_y="400dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPassword" />
