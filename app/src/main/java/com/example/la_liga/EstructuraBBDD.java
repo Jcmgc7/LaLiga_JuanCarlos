@@ -7,7 +7,7 @@ public class EstructuraBBDD {
             "CREATE TABLE IF NOT EXISTS "+ EstructuraLiga.TABLE_USUARIO +
                     "(" + EstructuraLiga._ID + " integer PRIMARY KEY, "
                     + EstructuraLiga.COLUMN_NOMBRE + " text, "
-                    + EstructuraLiga.COLUMN_GMAIL + " gmail, "
+                    + EstructuraLiga.COLUMN_GMAIL + " text, "
                     + EstructuraLiga.COLUMN_CONTRASENA + " text);";
 
     public static final String SQL_DELETE_ENTRIES =
