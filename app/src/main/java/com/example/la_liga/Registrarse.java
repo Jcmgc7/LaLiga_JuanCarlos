@@ -21,8 +21,6 @@ public class Registrarse extends AppCompatActivity {
     SQLiteDatabase db;
     SQLiteHelper helper;
 
-    String texto = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
