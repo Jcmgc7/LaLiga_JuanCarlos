@@ -22,33 +22,39 @@
             app:srcCompat="@mipmap/jc2" />
 
         <EditText
-            android:id="@+id/pts_insert"
+            android:id="@+id/id_puntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="122dp"
             android:layout_y="366dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:inputType="text"
             android:text="escribir puntos"
             android:textColor="#C1FF8400" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/id_foto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="122dp"
             android:layout_y="256dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:inputType="text"
             android:text="escribir foto"
             android:textColor="#C1FF8400" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/id_ciudad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="119dp"
             android:layout_y="147dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:inputType="text"
             android:text="escribir ciudad"
@@ -88,12 +94,13 @@
             android:textColor="#F30606" />
 
         <Button
-            android:id="@+id/insertar"
+            android:id="@+id/id_insertar"
             android:layout_width="241dp"
             android:layout_height="wrap_content"
             android:layout_x="83dp"
             android:layout_y="626dp"
             android:backgroundTint="#000000"
+            android:onClick="registrarse"
             android:text="ANADIR" />
 
         <TextView
@@ -108,11 +115,13 @@
             android:textColor="#F30606" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/id_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="119dp"
             android:layout_y="47dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:inputType="text"
             android:text="escribir nombre"
