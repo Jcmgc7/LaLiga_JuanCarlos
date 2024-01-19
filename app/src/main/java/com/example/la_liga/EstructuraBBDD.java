@@ -7,7 +7,7 @@ public class EstructuraBBDD {
             "CREATE TABLE IF NOT EXISTS "+ EstructuraLiga.TABLE_USUARIO +
                     "(" + EstructuraLiga._ID + " integer PRIMARY KEY, "
                     + EstructuraLiga.COLUMN_NOMBRE + " text, "
-                    + EstructuraLiga.COLUMN_GMAIL + " gmail, "
+                    + EstructuraLiga.COLUMN_GMAIL + " text, "
                     + EstructuraLiga.COLUMN_CONTRASENA + " text);";
 
     public static final String SQL_DELETE_ENTRIES =
@@ -15,7 +15,6 @@ public class EstructuraBBDD {
 
     private EstructuraBBDD() {}
 
-    /* Clase interna que define la estructura de la tabla de operas */
     public static class EstructuraLiga implements BaseColumns {
         public static final String TABLE_USUARIO = "Usuario";
         public static final String COLUMN_NOMBRE = "Nombre";
