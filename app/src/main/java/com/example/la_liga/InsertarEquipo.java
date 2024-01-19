@@ -55,7 +55,7 @@ public class InsertarEquipo extends AppCompatActivity {
         db.insert("Usuario",null, values);
     }
     public boolean existeEquipo(String nombreBuscado) {
-        Cursor cursor = db.rawQuery("SELECT nombre FROM equipo WHERE nombre = ?", new String[]{nombreBuscado});
+        Cursor cursor = db.rawQuery("SELECT nombre FROM Equipos WHERE nombre = ?", new String[]{nombreBuscado});
         boolean existe = cursor.moveToFirst();
         return existe;
     }

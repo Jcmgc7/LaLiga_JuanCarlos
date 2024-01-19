@@ -5,6 +5,9 @@
     <item
         android:id="@+id/Login"
         android:title="Login" />
-    <item android:title="InsertarEquip" />
+    <item
+        android:id="@+id/insertarEquip"
+        android:title="InsertarEquip" />
+
     <item android:title="Item" />
 </menu>

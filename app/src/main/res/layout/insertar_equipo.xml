@@ -6,20 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="414dp"
+        android:layout_height="731dp"
+        app:srcCompat="@mipmap/jc2"
+        tools:layout_editor_absoluteY="1dp" />
+
     <AbsoluteLayout
         android:layout_width="414dp"
         android:layout_height="731dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="-2dp"
         tools:layout_editor_absoluteY="0dp">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="414dp"
-            android:layout_height="731dp"
-            android:layout_x="2dp"
-            android:layout_y="1dp"
-            app:srcCompat="@mipmap/jc2" />
 
         <EditText
             android:id="@+id/id_puntos"
@@ -126,7 +125,7 @@
             android:inputType="text"
             android:text="escribir nombre"
             android:textColor="#C1FF8400" />
-
+        />
     </AbsoluteLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
