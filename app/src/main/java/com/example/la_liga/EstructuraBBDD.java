@@ -15,7 +15,6 @@ public class EstructuraBBDD {
 
     private EstructuraBBDD() {}
 
-    /* Clase interna que define la estructura de la tabla de operas */
     public static class EstructuraLiga implements BaseColumns {
         public static final String TABLE_USUARIO = "Usuario";
         public static final String COLUMN_NOMBRE = "Nombre";

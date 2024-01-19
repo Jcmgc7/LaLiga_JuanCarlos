@@ -36,11 +36,13 @@ public class Registrarse extends AppCompatActivity {
         startActivity(new Intent(Registrarse.this, IniciarSesion.class));
     }
     public void registrarse(View view) {
+        db=helper.getReadableDatabase();
+        Cursor c = db.rawQuery("select nombre from usuario where nombre = usuario.getText().toString();", null);
         insertar(usuario.getText().toString(), gmail.getText().toString(), contrasena1.getText().toString());
         if (usuario.getText().toString().equals("") || gmail.getText().toString().equals("") || contrasena1.getText().toString().equals("") ||
                 contrasena2.getText().toString().equals("")) {
             Toast.makeText(this, "Rellena todos los campos para poder Registrate", Toast.LENGTH_LONG).show();
-        } else if (usuario.getText().toString().equals("Hola")) {
+        } else if ( c == 0) {
             Toast.makeText(this, "Ese usuario ya exixte", Toast.LENGTH_LONG).show();
         } else if (!contrasena1.getText().toString().equals(contrasena2.getText().toString())) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
@@ -55,6 +57,5 @@ public class Registrarse extends AppCompatActivity {
         values.put("Gmail", gmail);
         values.put("Contrasena", contraena);
         db.insert("Usuario",null, values);
-
     }
 }
