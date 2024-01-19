@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         }
+        else if (itemId == R.id.insertarEquip) {
+            Intent i = new Intent(getApplicationContext(), InsertarEquipo.class);
+            startActivity(i);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
