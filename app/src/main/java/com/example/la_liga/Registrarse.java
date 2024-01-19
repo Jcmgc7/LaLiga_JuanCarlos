@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Registrarse extends AppCompatActivity {
@@ -19,6 +21,8 @@ public class Registrarse extends AppCompatActivity {
     SQLiteDatabase db;
     SQLiteHelper helper;
 
+    String texto = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +32,6 @@ public class Registrarse extends AppCompatActivity {
         contrasena1=findViewById(R.id.contrasena1);
         contrasena2=findViewById(R.id.contrasena2);
         helper= new SQLiteHelper(this);
-
         db=helper.getWritableDatabase();
 
     }
@@ -37,13 +40,13 @@ public class Registrarse extends AppCompatActivity {
     }
     public void registrarse(View view) {
         db=helper.getReadableDatabase();
-        Cursor c = db.rawQuery("select nombre from usuario where nombre = usuario.getText().toString();", null);
+        String usuarios = usuario.getText().toString();
         insertar(usuario.getText().toString(), gmail.getText().toString(), contrasena1.getText().toString());
         if (usuario.getText().toString().equals("") || gmail.getText().toString().equals("") || contrasena1.getText().toString().equals("") ||
                 contrasena2.getText().toString().equals("")) {
             Toast.makeText(this, "Rellena todos los campos para poder Registrate", Toast.LENGTH_LONG).show();
-        } else if ( c == 0) {
-            Toast.makeText(this, "Ese usuario ya exixte", Toast.LENGTH_LONG).show();
+        } else if (db.rawQuery("SELECT nombre FROM usuario WHERE nombre = usuarios;", null).moveToFirst() == false) {
+           Toast.makeText(this, "Ese usuario ya exixte", Toast.LENGTH_LONG).show();
         } else if (!contrasena1.getText().toString().equals(contrasena2.getText().toString())) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
         } else {
@@ -57,5 +60,26 @@ public class Registrarse extends AppCompatActivity {
         values.put("Gmail", gmail);
         values.put("Contrasena", contraena);
         db.insert("Usuario",null, values);
+    }
+    private String mostrarTabla(Cursor c) {
+        //los mostramos en el cuadro de texto que tenemos en el layout
+
+        texto = texto + ("\n Tabla operas \n-----------");
+        c.moveToFirst();
+
+        int nfilas=c.getCount();
+        int ncolumnas=c.getColumnCount();
+        String fila="\n";
+
+        for (int i = 0; i < nfilas; i++) {
+            fila="\n";
+            for(int j=0;j<ncolumnas;j++){
+                fila=fila+c.getString(j)+" ";
+            }
+            texto = texto + fila;
+
+            c.moveToNext();
+        }
+        return texto;
     }
 }
