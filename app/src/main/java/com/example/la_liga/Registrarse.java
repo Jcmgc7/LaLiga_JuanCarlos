@@ -41,16 +41,16 @@ public class Registrarse extends AppCompatActivity {
     public void registrarse(View view) {
         db=helper.getReadableDatabase();
         String usuarios = usuario.getText().toString();
-        insertar(usuario.getText().toString(), gmail.getText().toString(), contrasena1.getText().toString());
+        boolean existeUsuario = existeUsuario(usuarios);
         if (usuario.getText().toString().equals("") || gmail.getText().toString().equals("") || contrasena1.getText().toString().equals("") ||
                 contrasena2.getText().toString().equals("")) {
             Toast.makeText(this, "Rellena todos los campos para poder Registrate", Toast.LENGTH_LONG).show();
-        } else if (db.rawQuery("SELECT nombre FROM usuario WHERE nombre = usuarios;", null).moveToFirst() == false) {
-           Toast.makeText(this, "Ese usuario ya exixte", Toast.LENGTH_LONG).show();
         } else if (!contrasena1.getText().toString().equals(contrasena2.getText().toString())) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
+        } else if (existeUsuario == true) {
+            Toast.makeText(this, "Ese usuario ya exixte", Toast.LENGTH_LONG).show();
         } else {
-
+            insertar(usuario.getText().toString(), gmail.getText().toString(), contrasena1.getText().toString());
         }
     }
     private void insertar(String nombre, String gmail, String contraena) {
@@ -61,25 +61,9 @@ public class Registrarse extends AppCompatActivity {
         values.put("Contrasena", contraena);
         db.insert("Usuario",null, values);
     }
-    private String mostrarTabla(Cursor c) {
-        //los mostramos en el cuadro de texto que tenemos en el layout
-
-        texto = texto + ("\n Tabla operas \n-----------");
-        c.moveToFirst();
-
-        int nfilas=c.getCount();
-        int ncolumnas=c.getColumnCount();
-        String fila="\n";
-
-        for (int i = 0; i < nfilas; i++) {
-            fila="\n";
-            for(int j=0;j<ncolumnas;j++){
-                fila=fila+c.getString(j)+" ";
-            }
-            texto = texto + fila;
-
-            c.moveToNext();
-        }
-        return texto;
+    public boolean existeUsuario(String nombreBuscado) {
+        Cursor cursor = db.rawQuery("SELECT nombre FROM usuario WHERE nombre = ?", new String[]{nombreBuscado});
+        boolean existe = cursor.moveToFirst();
+        return existe;
     }
 }
