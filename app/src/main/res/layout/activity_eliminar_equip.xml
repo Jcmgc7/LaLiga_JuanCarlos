@@ -18,22 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="103dp"
-            android:layout_y="367dp"
-            android:text="Contraseña:"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-
         <EditText
             android:id="@+id/id_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="101dp"
-            android:layout_y="273dp"
+            android:layout_x="166dp"
+            android:layout_y="142dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -42,10 +32,10 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="103dp"
-            android:layout_y="236dp"
+            android:layout_x="16dp"
+            android:layout_y="109dp"
             android:backgroundTint="#EF0000"
-            android:text="Usuario:"
+            android:text="Nombre Equipo:"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -53,69 +43,47 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="128dp"
-            android:layout_y="561dp"
-            android:onClick="iniciar"
-            android:text="Iniciar sesion" />
+            android:layout_x="153dp"
+            android:layout_y="503dp"
+            android:onClick="eliminar"
+            android:text="ELIMINAR" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="109dp"
             android:layout_height="wrap_content"
-            android:layout_x="141dp"
-            android:layout_y="502dp"
-            android:onClick="registrarse"
-            android:text="registrase" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="105dp"
-            android:layout_y="301dp"
-            android:text="Correo:"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:layout_x="268dp"
+            android:layout_y="177dp"
+            android:onClick="buscar"
+            tools:text="BUSCAR" />
 
         <EditText
             android:id="@+id/id_ciudad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="102dp"
-            android:layout_y="335dp"
+            android:layout_x="89dp"
+            android:layout_y="361dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textEmailAddress" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="101dp"
-            android:layout_y="431dp"
-            android:text="Confirmar Contraseña:"
-            android:textColor="#000000"
-            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/id_puntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="103dp"
-            android:layout_y="466dp"
+            android:layout_x="89dp"
+            android:layout_y="428dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/contrasena1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="101dp"
-            android:layout_y="400dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPassword" />
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="59dp"
+            android:layout_height="51dp"
+            android:layout_x="312dp"
+            android:layout_y="67dp"
+            tools:srcCompat="@drawable/real_madrid" />
 
     </AbsoluteLayout>
 </FrameLayout>

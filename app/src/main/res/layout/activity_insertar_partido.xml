@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#040404"
+    android:backgroundTint="#040404"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/jc2" />
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="142dp"
+            android:layout_height="32dp"
+            android:layout_x="35dp"
+            android:layout_y="397dp"
+            android:text="PUNTOS_EQUIPO2" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="135dp"
+            android:layout_height="32dp"
+            android:layout_x="35dp"
+            android:layout_y="336dp"
+            android:text="PUNTOS_EQUIPO1" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="75dp"
+            android:layout_height="32dp"
+            android:layout_x="33dp"
+            android:layout_y="276dp"
+            android:text="EQUIPO2" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="75dp"
+            android:layout_height="32dp"
+            android:layout_x="33dp"
+            android:layout_y="90dp"
+            android:text="JORNADA:" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="75dp"
+            android:layout_height="32dp"
+            android:layout_x="33dp"
+            android:layout_y="216dp"
+            android:text="EQUIPO1" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="75dp"
+            android:layout_height="32dp"
+            android:layout_x="34dp"
+            android:layout_y="147dp"
+            android:text="FECHA:" />
+
+        <Button
+            android:id="@+id/boton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="141dp"
+            android:layout_y="549dp"
+            android:onClick="registrar"
+            android:text="REGISTRAR" />
+
+        <EditText
+            android:id="@+id/id_jornada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="127dp"
+            android:layout_y="91dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="Jornada"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/id_puntos2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="187dp"
+            android:layout_y="399dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="puntos2"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/id_puntos1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="181dp"
+            android:layout_y="337dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="puntos1"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/id_equipo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="119dp"
+            android:layout_y="275dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="Equipo2"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/id_equipo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="113dp"
+            android:layout_y="220dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="Equipo1"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/id_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="121dp"
+            android:layout_y="149dp"
+            android:background="#020202"
+            android:backgroundTint="#0C0C0C"
+            android:ems="10"
+            android:foregroundTint="#FFFFFF"
+            android:inputType="text"
+            android:text="Fecha"
+            android:textColor="#FFFFFF" />
+    </AbsoluteLayout>
+
+</FrameLayout>

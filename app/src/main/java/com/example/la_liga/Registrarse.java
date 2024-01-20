@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Registrarse extends AppCompatActivity {
@@ -25,10 +23,10 @@ public class Registrarse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
-        usuario=findViewById(R.id.usuario);
-        gmail=findViewById(R.id.gmail1);
+        usuario=findViewById(R.id.id_nombre);
+        gmail=findViewById(R.id.id_ciudad);
         contrasena1=findViewById(R.id.contrasena1);
-        contrasena2=findViewById(R.id.contrasena2);
+        contrasena2=findViewById(R.id.id_puntos);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 

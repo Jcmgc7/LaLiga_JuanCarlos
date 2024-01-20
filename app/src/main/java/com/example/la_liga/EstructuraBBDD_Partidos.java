@@ -8,11 +8,12 @@ public class EstructuraBBDD_Partidos {
     public static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE IF NOT EXISTS "+ EstructuraBBDD_Partidos.EstructuraPartido.TABLE_PARTIDO +
                     "(" + EstructuraBBDD_Partidos.EstructuraPartido._ID + " integer PRIMARY KEY, "
-                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_FECHA + " text, "
-                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_EQUIPO1 + " gmail, "
-                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_EQUIPO1 + " gmail, "
-                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_PUNTUACION2 + " gmail, "
-                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_PUNTUACION2 + " text);";
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_JORNADA + " Jornada, "
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_FECHA + " Fecha, "
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_EQUIPO1 + " Equipo1, "
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_EQUIPO2 + " Equipo2, "
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_PUNTUACION1 + " Puntos1, "
+                    + EstructuraBBDD_Partidos.EstructuraPartido.COLUMN_PUNTUACION2 + " Puntos2);";
 
     public static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS  " + EstructuraBBDD.EstructuraLiga.TABLE_USUARIO;
@@ -22,7 +23,8 @@ public class EstructuraBBDD_Partidos {
     /* Clase interna que define la estructura de la tabla de operas */
     public static class EstructuraPartido implements BaseColumns {
         public static final String TABLE_PARTIDO = "Partido";
-        public static final Date COLUMN_FECHA = new Date();
+        public static final String COLUMN_JORNADA = "Jornada";
+        public static final String COLUMN_FECHA = "Fecha";
         public static final String COLUMN_EQUIPO1 = "Equipo1";
         public static final String COLUMN_EQUIPO2 = "Equipo2";
         public static final Integer COLUMN_PUNTUACION1 = Integer.valueOf("Puntuacion_equipo1");

@@ -15,7 +15,7 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
-        usuario=findViewById(R.id.usuario);
+        usuario=findViewById(R.id.id_nombre);
         contrasena1=findViewById(R.id.contrasena);
     }
 
