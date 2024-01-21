@@ -32,8 +32,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="16dp"
-            android:layout_y="109dp"
+            android:layout_x="18dp"
+            android:layout_y="138dp"
             android:backgroundTint="#EF0000"
             android:text="Nombre Equipo:"
             android:textColor="#000000"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="153dp"
-            android:layout_y="503dp"
+            android:layout_y="481dp"
             android:onClick="eliminar"
             android:text="ELIMINAR" />
 
@@ -57,34 +57,6 @@
             android:onClick="buscar"
             tools:text="BUSCAR" />
 
-        <EditText
-            android:id="@+id/id_ciudad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="89dp"
-            android:layout_y="361dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/id_puntos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="89dp"
-            android:layout_y="428dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPassword" />
-
-        <ImageView
-            android:id="@+id/foto"
-            android:layout_width="59dp"
-            android:layout_height="51dp"
-            android:layout_x="312dp"
-            android:layout_y="67dp"
-            tools:srcCompat="@drawable/real_madrid" />
-
         <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
@@ -94,6 +66,46 @@
             android:onClick="salir"
             android:text="salir"
             android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/id_ciudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="150dp"
+            android:layout_y="364dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/id_puntos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="152dp"
+            android:layout_y="419dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_x="71dp"
+            android:layout_y="363dp"
+            android:text="Ciudad"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="70dp"
+            android:layout_y="417dp"
+            android:text="Puntos"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
     </AbsoluteLayout>
 </FrameLayout>

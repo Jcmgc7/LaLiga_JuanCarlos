@@ -1,11 +1,13 @@
 package com.example.la_liga;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Eliminar_Equipo extends AppCompatActivity {
     EditText nombreEquipo;
     EditText ciudad;
-    EditText foto;
+    ImageView foto;
     EditText puntos;
     SQLiteDatabase db;
     SQLiteHelper helper;
@@ -25,7 +27,6 @@ public class Eliminar_Equipo extends AppCompatActivity {
 
         nombreEquipo = findViewById(R.id.id_nombre);
         ciudad = findViewById(R.id.id_ciudad);
-        foto = findViewById(R.id.id_foto);
         puntos = findViewById(R.id.id_puntos);
 
         helper = new SQLiteHelper(this);
@@ -42,16 +43,14 @@ public class Eliminar_Equipo extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("Range")
     private void buscar(String nombreEquipo) {
         Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE Nombre = ?", new String[]{nombreEquipo});
 
         if (cursor.moveToFirst()) {
-            // Si se encontró el equipo, muestra los datos
             ciudad.setText(cursor.getString(cursor.getColumnIndex("Ciudad")));
-            foto.setText(cursor.getString(cursor.getColumnIndex("Foto")));
             puntos.setText(cursor.getString(cursor.getColumnIndex("Puntos")));
         } else {
-            // Si no se encontró el equipo, muestra un mensaje
             Toast.makeText(this, "Equipo no encontrado", Toast.LENGTH_SHORT).show();
         }
     }
@@ -69,7 +68,7 @@ public class Eliminar_Equipo extends AppCompatActivity {
             // Limpiar los campos después de eliminar
             nombreEquipo.setText("");
             ciudad.setText("");
-            foto.setText("");
+
             puntos.setText("");
         }
     }

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_x="-2dp"
             android:layout_y="0dp"
-            app:srcCompat="@drawable/jc" />
+            app:srcCompat="@drawable/f32877a557c68015a7f2b0b0118bac80" />
 
         <ScrollView
             android:id="@+id/id_calsi"
