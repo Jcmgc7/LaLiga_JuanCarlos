@@ -28,9 +28,9 @@ public class Eliminar_Partidos extends AppCompatActivity {
 
         jornada = findViewById(R.id.id_nombre);
         equipo1 = findViewById(R.id.id_equipo1);
-        equipo2 = findViewById(R.id.id_puntos);
+        equipo2 = findViewById(R.id.id_equipo2);
         puntos1 = findViewById(R.id.id_puntos1);
-        puntos2 = findViewById(R.id.id_ciudad);
+        puntos2 = findViewById(R.id.id_puntos2);
         fecha = findViewById(R.id.id_fecha);
         helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
@@ -71,18 +71,10 @@ public class Eliminar_Partidos extends AppCompatActivity {
 
     private void eliminarPartido() {
         String jornadaPartido = jornada.getText().toString();
-        if (!jornadaPartido.isEmpty()) {
-            db = helper.getWritableDatabase();
-            int filasEliminadas = db.delete("Partidos", "Jornada = ?", new String[]{jornadaPartido});
-            if (filasEliminadas > 0) {
-                Toast.makeText(this, "Partido eliminado correctamente", Toast.LENGTH_SHORT).show();
-                limpiarCampos();
-            } else {
-                Toast.makeText(this, "No se pudo eliminar el partido", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Ingrese una jornada válida", Toast.LENGTH_SHORT).show();
-        }
+        db = helper.getWritableDatabase();
+        db.delete("Partido", "Jornada = ?", new String[]{jornadaPartido});
+        Toast.makeText(this, "Partido eliminado correctamente", Toast.LENGTH_SHORT).show();
+        limpiarCampos();
     }
 
     private void limpiarCampos() {
