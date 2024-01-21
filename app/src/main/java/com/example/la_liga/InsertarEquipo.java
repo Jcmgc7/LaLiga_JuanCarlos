@@ -52,7 +52,7 @@ public class InsertarEquipo extends AppCompatActivity {
         values.put("Ciudad", ciudad);
         values.put("Fotos", foto);
         values.put("Puntos", puntos);
-        db.insert("Usuario",null, values);
+        db.insert("Equipos",null, values);
     }
     public boolean existeEquipo(String nombreBuscado) {
         Cursor cursor = db.rawQuery("SELECT nombre FROM Equipos WHERE nombre = ?", new String[]{nombreBuscado});
