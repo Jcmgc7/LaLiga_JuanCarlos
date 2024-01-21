@@ -29,8 +29,8 @@
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:hint="Escribir puntos"
             android:inputType="text"
-            android:text="escribir puntos"
             android:textColor="#C1FF8400" />
 
         <EditText
@@ -42,8 +42,8 @@
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:hint="Escribir foto"
             android:inputType="text"
-            android:text="escribir foto"
             android:textColor="#C1FF8400" />
 
         <EditText
@@ -55,8 +55,8 @@
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:hint="Escribir ciudad"
             android:inputType="text"
-            android:text="escribir ciudad"
             android:textColor="#C1FF8400" />
 
         <TextView
@@ -122,8 +122,8 @@
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:hint="Escribir nombre"
             android:inputType="text"
-            android:text="escribir nombre"
             android:textColor="#C1FF8400" />
         />
     </AbsoluteLayout>
