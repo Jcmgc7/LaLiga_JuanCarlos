@@ -1,5 +1,6 @@
 package com.example.la_liga;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -52,15 +53,16 @@ public class Eliminar_Partidos extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("Range")
     private void buscarPartido(String jornadaPartido) {
         db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Partidos WHERE Jornada = ?", new String[]{jornadaPartido});
+        Cursor cursor = db.rawQuery("SELECT * FROM Partido WHERE jornada = ?", new String[]{jornadaPartido});
 
         if (cursor.moveToFirst()) {
             equipo1.setText(cursor.getString(cursor.getColumnIndex("Equipo1")));
             equipo2.setText(cursor.getString(cursor.getColumnIndex("Equipo2")));
-            puntos1.setText(cursor.getString(cursor.getColumnIndex("Puntos1")));
-            puntos2.setText(cursor.getString(cursor.getColumnIndex("Puntos2")));
+            puntos1.setText(cursor.getString(cursor.getColumnIndex("Puntuacion_equipo1")));
+            puntos2.setText(cursor.getString(cursor.getColumnIndex("Puntuacion_equipo2")));
             fecha.setText(cursor.getString(cursor.getColumnIndex("Fecha")));
         } else {
             Toast.makeText(this, "Partido no encontrado", Toast.LENGTH_SHORT).show();
