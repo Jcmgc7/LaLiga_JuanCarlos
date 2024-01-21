@@ -1,6 +1,5 @@
 package com.example.la_liga;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -35,18 +34,33 @@ public class Eliminar_Partidos extends AppCompatActivity {
         helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
 
+        Button buscarButton = findViewById(R.id.button4);
+        buscarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String jornadaPartido = jornada.getText().toString();
+                buscarPartido(jornadaPartido);
+            }
+        });
+
+        Button eliminarButton = findViewById(R.id.button3);
+        eliminarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminarPartido();
+            }
+        });
     }
 
-    @SuppressLint("Range")
     private void buscarPartido(String jornadaPartido) {
         db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM Partido WHERE jornada = ?", new String[]{jornadaPartido});
+        Cursor cursor = db.rawQuery("SELECT * FROM Partidos WHERE Jornada = ?", new String[]{jornadaPartido});
 
         if (cursor.moveToFirst()) {
             equipo1.setText(cursor.getString(cursor.getColumnIndex("Equipo1")));
             equipo2.setText(cursor.getString(cursor.getColumnIndex("Equipo2")));
-            puntos1.setText(cursor.getString(cursor.getColumnIndex("Puntuacion_equipo1")));
-            puntos2.setText(cursor.getString(cursor.getColumnIndex("Puntuacion_equipo2")));
+            puntos1.setText(cursor.getString(cursor.getColumnIndex("Puntos1")));
+            puntos2.setText(cursor.getString(cursor.getColumnIndex("Puntos2")));
             fecha.setText(cursor.getString(cursor.getColumnIndex("Fecha")));
         } else {
             Toast.makeText(this, "Partido no encontrado", Toast.LENGTH_SHORT).show();
@@ -80,15 +94,5 @@ public class Eliminar_Partidos extends AppCompatActivity {
 
     public void salir(View view) {
         startActivity(new Intent(Eliminar_Partidos.this, Clasificacion.class));
-    }
-
-    public void buscar(View view) {
-
-        String jornadaPartido = jornada.getText().toString();
-        buscarPartido(jornadaPartido);
-    }
-
-    public void eliminar(View view) {
-        eliminarPartido();
     }
 }
