@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#EC0909"
+    android:foregroundTint="#FD0000"
+    tools:context=".Modificar_Equipo">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/jc" />
+
+    <AbsoluteLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/id_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="163dp"
+            android:layout_y="186dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="13dp"
+            android:layout_y="186dp"
+            android:backgroundTint="#EF0000"
+            android:text="Nombre Equipo:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_x="257dp"
+            android:layout_y="124dp"
+            android:onClick="buscar"
+            android:text="Buscar" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_x="15dp"
+            android:layout_y="17dp"
+            android:onClick="salir"
+            android:text="salir"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/id_puntos2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="163dp"
+            android:layout_y="237dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_x="71dp"
+            android:layout_y="238dp"
+            android:text="Ciudad"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ListView
+            android:id="@+id/lista_equipos"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:layout_x="3dp"
+            android:layout_y="362dp" />
+
+    </AbsoluteLayout>
+</FrameLayout>
