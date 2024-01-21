@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#EC0909"
     android:foregroundTint="#FD0000"
-    tools:context=".Eliminar_Equipo">
+    tools:context=".EliminarEquipo">
 
     <ImageView
         android:id="@+id/imageView"

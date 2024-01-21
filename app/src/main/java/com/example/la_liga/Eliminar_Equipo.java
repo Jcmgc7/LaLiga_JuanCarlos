@@ -1,18 +1,18 @@
 package com.example.la_liga;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Eliminar_Equipo extends AppCompatActivity {
-    EditText nombre;
+    EditText nombreEquipo;
     EditText ciudad;
     EditText foto;
     EditText puntos;
@@ -23,44 +23,59 @@ public class Eliminar_Equipo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar_equip);
-        nombre=findViewById(R.id.id_nombre);
-        ciudad=findViewById(R.id.id_puntos2);
-        //foto=findViewById(R.id.id_foto);
-        puntos=findViewById(R.id.id_equipo2);
-        helper= new SQLiteHelper(this);
-        db=helper.getWritableDatabase();
 
-    }
-    public void eliminar(View view) {
+        nombreEquipo = findViewById(R.id.id_nombre);
+        ciudad = findViewById(R.id.id_puntos2);
+        foto = findViewById(R.id.id_foto);
+        puntos = findViewById(R.id.id_equipo2);
 
+        helper = new SQLiteHelper(this);
+        db = helper.getWritableDatabase();
     }
+
     public void buscar(View view) {
-        db=helper.getReadableDatabase();
-        String usuarios = nombre.getText().toString();
-        //boolean existeUsuario = existeUsuario(usuarios);
-        if (nombre.getText().toString().equals("") ) {
-            Toast.makeText(this, "Inserte el nombre del equipo que quieres eliminar", Toast.LENGTH_LONG).show();
+        String equipoBuscado = nombreEquipo.getText().toString();
+
+        if (equipoBuscado.equals("")) {
+            Toast.makeText(this, "Introduce un nombre de equipo para buscar", Toast.LENGTH_SHORT).show();
         } else {
-            busqueda(nombre.getText().toString(), ciudad.getText().toString(), foto.getText().toString(), puntos.getText().toString());
+            buscar(equipoBuscado);
         }
     }
-    private void busqueda(String nombre, String gmail, String contraena, String s) {
 
-        ContentValues values= new ContentValues();
-        values.put("Nombre", nombre);
-        values.put("Gmail", gmail);
-        values.put("Contrasena", contraena);
-        db.insert("Usuario",null, values);
+    private void buscar(String nombreEquipo) {
+        Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE Nombre = ?", new String[]{nombreEquipo});
+
+        if (cursor.moveToFirst()) {
+            // Si se encontró el equipo, muestra los datos
+            ciudad.setText(cursor.getString(cursor.getColumnIndex("Ciudad")));
+            foto.setText(cursor.getString(cursor.getColumnIndex("Foto")));
+            puntos.setText(cursor.getString(cursor.getColumnIndex("Puntos")));
+        } else {
+            // Si no se encontró el equipo, muestra un mensaje
+            Toast.makeText(this, "Equipo no encontrado", Toast.LENGTH_SHORT).show();
+        }
     }
-    public void existeUsuario(String nombreBuscado, String ciudad, String foto, String puntos) {
-        Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE nombre = ?", new String[]{nombreBuscado});
-        boolean existe = cursor.moveToFirst();
-        if(existe){
-            nombre.setText("contenido de la consulta");
+
+    public void eliminar(View view) {
+        String equipoEliminar = nombreEquipo.getText().toString();
+
+        if (equipoEliminar.equals("")) {
+            Toast.makeText(this, "Introduce un nombre de equipo para eliminar", Toast.LENGTH_SHORT).show();
+        } else {
+            // Eliminar el equipo de la base de datos
+            db.delete("Equipos", "Nombre=?", new String[]{equipoEliminar});
+            Toast.makeText(this, "Equipo eliminado con éxito", Toast.LENGTH_SHORT).show();
+
+            // Limpiar los campos después de eliminar
+            nombreEquipo.setText("");
+            ciudad.setText("");
+            foto.setText("");
+            puntos.setText("");
         }
     }
 
     public void salir(View view) {
-        startActivity(new Intent(Eliminar_Equipo.this, Clasificacion.class));
+        startActivity(new Intent(EliminarEquipo.this, Clasificacion.class));
     }
 }
