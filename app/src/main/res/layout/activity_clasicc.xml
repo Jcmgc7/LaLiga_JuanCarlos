@@ -1,0 +1,46 @@
+<!-- lista_equipos.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewItem"
+        android:layout_width="66dp"
+        android:layout_height="34dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/textViewNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ciudad"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewPuntos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Puntos"
+            android:textSize="16sp" />
+        <ListView
+            android:id="@+id/listViewEquipos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
