@@ -7,7 +7,7 @@
         android:title="Login" />
     <item
         android:id="@+id/insertarEquip"
-        android:title="InsertarEquip" />
+        android:title="insertarEquip" />
 
     <item android:title="Item" />
 </menu>

@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), Login.class);
             startActivity(i);
             return true;
-        }
-        else if (itemId == R.id.insertarEquip) {
+        } else if (itemId == R.id.insertarEquip) {
             Intent i = new Intent(getApplicationContext(), InsertarEquipo.class);
             startActivity(i);
             return true;
