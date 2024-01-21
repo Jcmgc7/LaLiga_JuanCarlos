@@ -21,7 +21,7 @@ public class Modificar_Equipo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_equip);
+        setContentView(R.layout.activity_modificar_equip);
 
         nombreEquipo = findViewById(R.id.id_nombre);
         ciudad = findViewById(R.id.id_puntos2);
@@ -71,5 +71,6 @@ public class Modificar_Equipo extends AppCompatActivity {
     private void limpiarCampos() {
         ciudad.setText("");
         puntos.setText("");
+        nombreEquipo.setText("");
     }
 }
