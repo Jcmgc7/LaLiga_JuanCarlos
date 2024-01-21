@@ -55,25 +55,21 @@ public class Modificar_Equipo extends AppCompatActivity {
 
     public void modificar(View view) {
         String nombreEquipoModif = nombreEquipo.getText().toString();
-        if (!nombreEquipoModif.isEmpty()) {
-            db = helper.getWritableDatabase();
-
-            ContentValues values = new ContentValues();
-            values.put("Ciudad", ciudad.getText().toString());
-            values.put("Puntos", puntos.getText().toString());
-
-            int filasModificadas = db.update("Equipos", values, "Nombre = ?", new String[]{nombreEquipoModif});
-            if (filasModificadas > 0) {
-                Toast.makeText(this, "Equipo modificado correctamente", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "No se pudo modificar el equipo", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Ingrese un nombre de equipo válido", Toast.LENGTH_SHORT).show();
-        }
+        db = helper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("Ciudad", ciudad.getText().toString());
+        values.put("Puntos", puntos.getText().toString());
+        int filasModificadas = db.update("Equipos", values, "Nombre = ?", new String[]{nombreEquipoModif});
+        Toast.makeText(this, "Equipo modificado correctamente", Toast.LENGTH_SHORT).show();
+        limpiarCampos();
     }
 
     public void salir(View view) {
         startActivity(new Intent(Modificar_Equipo.this, Clasificacion.class));
+    }
+
+    private void limpiarCampos() {
+        ciudad.setText("");
+        puntos.setText("");
     }
 }

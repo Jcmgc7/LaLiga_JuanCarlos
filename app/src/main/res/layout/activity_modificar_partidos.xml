@@ -55,14 +55,14 @@
             android:layout_x="268dp"
             android:layout_y="177dp"
             android:onClick="buscar"
-            tools:text="BUSCAR" />
+            android:text="Buscar" />
 
         <EditText
             android:id="@+id/id_ciudad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="93dp"
-            android:layout_y="541dp"
+            android:layout_x="133dp"
+            android:layout_y="508dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -71,8 +71,8 @@
             android:id="@+id/id_puntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="89dp"
-            android:layout_y="428dp"
+            android:layout_x="136dp"
+            android:layout_y="415dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -81,8 +81,8 @@
             android:id="@+id/id_puntos1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="91dp"
-            android:layout_y="478dp"
+            android:layout_x="135dp"
+            android:layout_y="459dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -91,8 +91,8 @@
             android:id="@+id/id_equipo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="87dp"
-            android:layout_y="365dp"
+            android:layout_x="135dp"
+            android:layout_y="377dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -101,8 +101,8 @@
             android:id="@+id/id_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="86dp"
-            android:layout_y="300dp"
+            android:layout_x="119dp"
+            android:layout_y="335dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:inputType="text" />
@@ -116,5 +116,54 @@
             android:onClick="salir"
             android:text="salir"
             android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="55dp"
+            android:layout_y="333dp"
+            android:text="Fecha"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="55dp"
+            android:layout_y="375dp"
+            android:text="Equipo1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="55dp"
+            android:layout_y="414dp"
+            android:text="Equipo2"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="54dp"
+            android:layout_y="455dp"
+            android:text="Puntos1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="51dp"
+            android:layout_y="505dp"
+            android:text="Puntos2"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
     </AbsoluteLayout>
 </FrameLayout>

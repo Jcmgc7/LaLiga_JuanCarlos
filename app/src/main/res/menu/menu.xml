@@ -8,13 +8,15 @@
     <item
         android:id="@+id/InsertarEquipo"
         android:title="Insertar Equipo" />
-
     <item
         android:id="@+id/EliminarEquipos"
         android:title="Eliminar Equipo" />
     <item
         android:id="@+id/EliminarPartido"
         android:title="Eliminar Partido" />
+    <item
+        android:id="@+id/ModificarPartidos"
+        android:title="Modificar Partidos" />
     <item
         android:id="@+id/ModificarEquipos"
         android:title="Modificar Equipos" />

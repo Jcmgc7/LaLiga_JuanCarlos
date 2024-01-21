@@ -55,7 +55,7 @@
             android:layout_x="268dp"
             android:layout_y="177dp"
             android:onClick="buscar"
-            tools:text="BUSCAR" />
+            android:text="Buscar" />
 
         <Button
             android:id="@+id/button5"

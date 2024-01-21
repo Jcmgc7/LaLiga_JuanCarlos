@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#EC0909"
     android:foregroundTint="#FD0000"
-    tools:context=".Eliminar_Equipo">
+    tools:context=".Modificar_Equipo">
 
     <ImageView
         android:id="@+id/imageView"
@@ -55,7 +55,7 @@
             android:layout_x="268dp"
             android:layout_y="177dp"
             android:onClick="buscar"
-            tools:text="BUSCAR" />
+            android:text="Buscar" />
 
         <Button
             android:id="@+id/button5"

@@ -40,6 +40,9 @@
             android:name=".Modificar_Partido"
             android:exported="false" />
         <activity
+            android:name=".Modificar_Equipo"
+            android:exported="false" />
+        <activity
             android:name=".Eliminar_Equipo"
             android:exported="false" />
         <activity
