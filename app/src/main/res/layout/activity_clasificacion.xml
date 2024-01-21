@@ -29,14 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="61dp"
-                    android:layout_height="match_parent"
-                    android:layout_x="0dp"
-                    android:layout_y="0dp"
-                    android:src="@tools:sample/avatars" />
-
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="80dp"
