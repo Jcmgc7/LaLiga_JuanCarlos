@@ -21,4 +21,6 @@ public class Login extends AppCompatActivity {
     public void registro(View view) {
         startActivity(new Intent(Login.this, Registrarse.class));
     }
+
+
 }

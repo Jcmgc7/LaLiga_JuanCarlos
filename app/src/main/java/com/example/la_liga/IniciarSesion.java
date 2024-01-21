@@ -39,7 +39,7 @@ public class IniciarSesion extends AppCompatActivity {
         } else if (existeUsuario == false) {
             Toast.makeText(this, "El usuario o la contraseña son incorrectas.", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, "Ese usuario no exixte.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(IniciarSesion.this, Clasificacion.class));
         }
     }
 

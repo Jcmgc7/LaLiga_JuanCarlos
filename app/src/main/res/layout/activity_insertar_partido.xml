@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#040404"
     android:backgroundTint="#040404"
-    tools:context=".Login">
+    android:onClick="registrar"
+    tools:context=".InsertarPartido">
 
     <ImageView
         android:id="@+id/imageView10"
@@ -16,7 +17,8 @@
 
     <AbsoluteLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="registrar">
 
         <TextView
             android:id="@+id/textView8"
@@ -24,7 +26,8 @@
             android:layout_height="32dp"
             android:layout_x="35dp"
             android:layout_y="397dp"
-            android:text="PUNTOS_EQUIPO2" />
+            android:text="PUNTOS_EQUIPO2"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textView9"
@@ -32,7 +35,8 @@
             android:layout_height="32dp"
             android:layout_x="35dp"
             android:layout_y="336dp"
-            android:text="PUNTOS_EQUIPO1" />
+            android:text="PUNTOS_EQUIPO1"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textView10"
@@ -40,7 +44,8 @@
             android:layout_height="32dp"
             android:layout_x="33dp"
             android:layout_y="276dp"
-            android:text="EQUIPO2" />
+            android:text="EQUIPO2"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textView11"
@@ -48,7 +53,8 @@
             android:layout_height="32dp"
             android:layout_x="33dp"
             android:layout_y="90dp"
-            android:text="JORNADA:" />
+            android:text="JORNADA:"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textView12"
@@ -56,7 +62,8 @@
             android:layout_height="32dp"
             android:layout_x="33dp"
             android:layout_y="216dp"
-            android:text="EQUIPO1" />
+            android:text="EQUIPO1"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/textView13"
@@ -64,7 +71,8 @@
             android:layout_height="32dp"
             android:layout_x="34dp"
             android:layout_y="147dp"
-            android:text="FECHA:" />
+            android:text="FECHA:"
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/boton"
@@ -86,7 +94,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="Jornada"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -100,7 +107,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="puntos2"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -114,7 +120,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="puntos1"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -128,7 +133,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="Equipo2"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -142,7 +146,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="Equipo1"
             android:textColor="#FFFFFF" />
 
         <EditText
@@ -156,7 +159,6 @@
             android:ems="10"
             android:foregroundTint="#FFFFFF"
             android:inputType="text"
-            android:text="Fecha"
             android:textColor="#FFFFFF" />
     </AbsoluteLayout>
 

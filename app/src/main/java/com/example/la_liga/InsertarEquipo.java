@@ -49,7 +49,7 @@ public class InsertarEquipo extends AppCompatActivity {
         ContentValues values= new ContentValues();
         values.put("Nombre", nombre);
         values.put("Ciudad", ciudad);
-        values.put("Fotos", foto);
+        values.put("Foto", foto);
         values.put("Puntos", puntos);
         db.insert("Equipos",null, values);
     }

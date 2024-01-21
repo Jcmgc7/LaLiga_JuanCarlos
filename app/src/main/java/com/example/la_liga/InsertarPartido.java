@@ -36,7 +36,7 @@ public class InsertarPartido extends AppCompatActivity {
         db=helper.getWritableDatabase();
 
     }
-    public void registar (View view) {
+    public void registrar (View view) {
         db=helper.getReadableDatabase();
         String name = jornada.getText().toString();
         boolean existeUsuario = existeUsuario(name);
@@ -56,12 +56,12 @@ public class InsertarPartido extends AppCompatActivity {
         values.put("Fecha", fecha);
         values.put("Equipo1", equipo1);
         values.put("Equipo2", equipo2);
-        values.put("Puntuacion_equipo1", Integer.valueOf(puntos1));
-        values.put("Puntuacion_equipo2", Integer.valueOf(puntos2));
+        values.put("Puntuacion_equipo1", puntos1);
+        values.put("Puntuacion_equipo2", puntos2);
         db.insert("Partido",null, values);
     }
     public boolean existeUsuario(String nombreBuscado) {
-        Cursor cursor = db.rawQuery("SELECT jornada FROM partido WHERE nombre = ?", new String[]{nombreBuscado});
+        Cursor cursor = db.rawQuery("SELECT jornada FROM Partido WHERE jornada = ?", new String[]{nombreBuscado});
         boolean existe = cursor.moveToFirst();
         return existe;
     }

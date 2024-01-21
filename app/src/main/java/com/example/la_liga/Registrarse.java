@@ -49,6 +49,7 @@ public class Registrarse extends AppCompatActivity {
             Toast.makeText(this, "Ese usuario ya exixte.", Toast.LENGTH_LONG).show();
         } else {
             insertar(usuario.getText().toString(), gmail.getText().toString(), contrasena1.getText().toString());
+            startActivity(new Intent(Registrarse.this, Clasificacion.class));
         }
     }
     private void insertar(String nombre, String gmail, String contraena) {
