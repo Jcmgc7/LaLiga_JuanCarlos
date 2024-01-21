@@ -41,7 +41,7 @@ public class Registrarse extends AppCompatActivity {
         if (usuario.getText().toString().equals("") || gmail.getText().toString().equals("") || contrasena1.getText().toString().equals("") ||
                 contrasena2.getText().toString().equals("")) {
             Toast.makeText(this, "Rellena todos los campos para poder Registrate.", Toast.LENGTH_LONG).show();
-        } else if (!gmail.getText().toString().contains("gmail.com")) {
+        } else if (!gmail.getText().toString().contains("@gmail.com")) {
             Toast.makeText(this, "Escriva corectamente el gmail.", Toast.LENGTH_LONG).show();
         } else if (!contrasena1.getText().toString().equals(contrasena2.getText().toString())) {
             Toast.makeText(this, "Las contraseñas no coinciden.", Toast.LENGTH_LONG).show();
