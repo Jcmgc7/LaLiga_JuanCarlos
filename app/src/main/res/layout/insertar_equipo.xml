@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Eliminar_Equipo">
+    tools:context=".InsertarEquipo">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="119dp"
-            android:layout_y="147dp"
+            android:layout_y="176dp"
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
@@ -69,7 +69,8 @@
             android:backgroundTint="@color/white"
             android:foregroundTint="@color/white"
             android:text="Puntos"
-            android:textColor="#F30606" />
+            android:textColor="#F30606"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/foto_insert"
@@ -80,18 +81,20 @@
             android:backgroundTint="@color/white"
             android:foregroundTint="@color/white"
             android:text="Foto"
-            android:textColor="#F30606" />
+            android:textColor="#F30606"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/ciudad_insert"
             android:layout_width="92dp"
             android:layout_height="47dp"
             android:layout_x="20dp"
-            android:layout_y="147dp"
+            android:layout_y="174dp"
             android:backgroundTint="@color/white"
             android:foregroundTint="@color/white"
             android:text="Ciudad "
-            android:textColor="#F30606" />
+            android:textColor="#F30606"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/id_insertar"
@@ -108,25 +111,35 @@
             android:layout_width="92dp"
             android:layout_height="47dp"
             android:layout_x="19dp"
-            android:layout_y="47dp"
+            android:layout_y="77dp"
             android:backgroundTint="@color/white"
             android:foregroundTint="@color/white"
             android:text="Nombre"
-            android:textColor="#F30606" />
+            android:textColor="#F30606"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/id_nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_x="119dp"
-            android:layout_y="47dp"
+            android:layout_x="116dp"
+            android:layout_y="81dp"
             android:background="#FFFFFF"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Escribir nombre"
             android:inputType="text"
             android:textColor="#C1FF8400" />
-        />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_x="322dp"
+            android:layout_y="-4dp"
+            android:onClick="salir"
+            android:text="salir"
+            android:textSize="16sp" />
     </AbsoluteLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

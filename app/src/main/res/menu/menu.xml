@@ -3,11 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Login"
-        android:title="Login" />
+        android:id="@+id/InsertarPartidos"
+        android:title="Insertar Partido" />
     <item
-        android:id="@+id/insertarEquip"
-        android:title="insertarEquip" />
+        android:id="@+id/InsertarEquipo"
+        android:title="Insertar Equipo" />
 
-    <item android:title="Item" />
+    <item
+        android:id="@+id/EliminarEquipos"
+        android:title="Eliminar Equipo" />
+    <item
+        android:id="@+id/EliminarPartido"
+        android:title="Eliminar Partido" />
 </menu>

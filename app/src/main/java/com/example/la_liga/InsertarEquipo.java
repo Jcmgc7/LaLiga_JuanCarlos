@@ -1,6 +1,7 @@
 package com.example.la_liga;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -57,5 +58,9 @@ public class InsertarEquipo extends AppCompatActivity {
         Cursor cursor = db.rawQuery("SELECT nombre FROM Equipos WHERE nombre = ?", new String[]{nombreBuscado});
         boolean existe = cursor.moveToFirst();
         return existe;
+    }
+
+    public void salir(View view) {
+        startActivity(new Intent(InsertarEquipo.this, Clasificacion.class));
     }
 }

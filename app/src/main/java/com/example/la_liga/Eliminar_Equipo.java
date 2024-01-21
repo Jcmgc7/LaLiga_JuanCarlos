@@ -1,6 +1,7 @@
 package com.example.la_liga;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -57,5 +58,9 @@ public class Eliminar_Equipo extends AppCompatActivity {
         if(existe){
             nombre.setText("contenido de la consulta");
         }
+    }
+
+    public void salir(View view) {
+        startActivity(new Intent(Eliminar_Equipo.this, Clasificacion.class));
     }
 }
