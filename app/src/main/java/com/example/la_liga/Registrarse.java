@@ -24,9 +24,9 @@ public class Registrarse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
         usuario=findViewById(R.id.id_nombre);
-        gmail=findViewById(R.id.id_ciudad);
+        gmail=findViewById(R.id.id_puntos2);
         contrasena1=findViewById(R.id.contrasena1);
-        contrasena2=findViewById(R.id.id_puntos);
+        contrasena2=findViewById(R.id.id_equipo2);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 

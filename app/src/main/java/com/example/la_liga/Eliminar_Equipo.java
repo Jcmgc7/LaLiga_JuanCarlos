@@ -23,9 +23,9 @@ public class Eliminar_Equipo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar_equip);
         nombre=findViewById(R.id.id_nombre);
-        ciudad=findViewById(R.id.id_ciudad);
+        ciudad=findViewById(R.id.id_puntos2);
         //foto=findViewById(R.id.id_foto);
-        puntos=findViewById(R.id.id_puntos);
+        puntos=findViewById(R.id.id_equipo2);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 
