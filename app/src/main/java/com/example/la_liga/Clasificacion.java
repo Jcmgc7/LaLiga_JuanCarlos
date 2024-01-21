@@ -42,6 +42,10 @@ public class Clasificacion extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), Eliminar_Partidos.class);
             startActivity(i);
             return true;
+        } else if (itemId == R.id.ModificarEquipos) {
+            Intent i = new Intent(getApplicationContext(), Modificar_Partido.class);
+            startActivity(i);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

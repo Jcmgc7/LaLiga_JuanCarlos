@@ -72,28 +72,28 @@ public class Modificar_Partido extends AppCompatActivity {
 
     private void modificarPartido() {
         String jornadaPartido = jornada.getText().toString();
-        if (!jornadaPartido.isEmpty()) {
             db = helper.getWritableDatabase();
-
             ContentValues values = new ContentValues();
             values.put("Equipo1", equipo1.getText().toString());
             values.put("Equipo2", equipo2.getText().toString());
             values.put("Puntuacion_equipo1", puntos1.getText().toString());
             values.put("Puntuacion_equipo2", puntos2.getText().toString());
             values.put("Fecha", fecha.getText().toString());
-
             int filasModificadas = db.update("Partido", values, "jornada = ?", new String[]{jornadaPartido});
-            if (filasModificadas > 0) {
-                Toast.makeText(this, "Partido modificado correctamente", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "No se pudo modificar el partido", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Ingrese una jornada válida", Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(this, "Partido modificado correctamente", Toast.LENGTH_SHORT).show();
+        limpiarCampos();
+
     }
 
     public void salir(View view) {
         startActivity(new Intent(Modificar_Partido.this, Clasificacion.class));
+    }
+    private void limpiarCampos() {
+        jornada.setText("");
+        equipo1.setText("");
+        equipo2.setText("");
+        puntos1.setText("");
+        puntos2.setText("");
+        fecha.setText("");
     }
 }
