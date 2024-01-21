@@ -68,7 +68,6 @@ public class Eliminar_Equipo extends AppCompatActivity {
             // Limpiar los campos después de eliminar
             nombreEquipo.setText("");
             ciudad.setText("");
-
             puntos.setText("");
         }
     }

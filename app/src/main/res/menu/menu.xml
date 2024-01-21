@@ -20,4 +20,7 @@
     <item
         android:id="@+id/ModificarEquipos"
         android:title="Modificar Equipos" />
+    <item
+        android:id="@+id/MostrarEquipos"
+        android:title="Mostrar Equipos" />
 </menu>

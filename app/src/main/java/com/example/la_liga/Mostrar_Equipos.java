@@ -1,5 +1,6 @@
 package com.example.la_liga;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,15 +16,19 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MostrarEquipos extends AppCompatActivity {
+public class Mostrar_Equipos extends AppCompatActivity {
     SQLiteDatabase db;
     SQLiteHelper helper;
     ListView lv;
+    String nombre;
+    String ciudad;
+    String puntos;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clasicc);
+        setContentView(R.layout.activity_mostrar_equipos);
 
         lv = findViewById(R.id.listViewEquipos);
         helper = new SQLiteHelper(this);
@@ -62,12 +67,13 @@ public class MostrarEquipos extends AppCompatActivity {
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(
                 this,
-                R.layout.lista_equipos,
+                R.layout.insertar_equipo,
                 cursor,
                 from,
                 to,
                 CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
         ) {
+            @SuppressLint("Range")
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -80,16 +86,10 @@ public class MostrarEquipos extends AppCompatActivity {
 
                 // Extrae la información del cursor
                 cursor.moveToPosition(position);
-                int imagenResource = cursor.getInt(cursor.getColumnIndex("Foto"));
-                String nombre = cursor.getString(cursor.getColumnIndex("Nombre"));
-                String ciudad = cursor.getString(cursor.getColumnIndex("Ciudad"));
-                String puntos = cursor.getString(cursor.getColumnIndex("Puntos"));
 
-                // Configura la vista con la información
-                imageViewItem.setImageResource(imagenResource);
-                textViewNombre.setText(nombre);
-                textViewCiudad.setText(ciudad);
-                textViewPuntos.setText(puntos);
+                nombre = cursor.getString(cursor.getColumnIndex("Nombre"));
+                ciudad = cursor.getString(cursor.getColumnIndex("Ciudad"));
+                puntos = cursor.getString(cursor.getColumnIndex("Puntos"));
 
                 return view;
             }
