@@ -13,6 +13,9 @@
         android:theme="@style/Theme.La_Liga"
         tools:targetApi="31">
         <activity
+            android:name=".Mostrar_Equipos"
+            android:exported="false" />
+        <activity
             android:name=".Eliminar_Partidos"
             android:exported="false" />
         <activity
