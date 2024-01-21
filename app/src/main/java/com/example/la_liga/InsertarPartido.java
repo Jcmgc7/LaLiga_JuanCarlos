@@ -30,9 +30,9 @@ public class InsertarPartido extends AppCompatActivity {
         jornada=findViewById(R.id.id_jornada);
         fecha=findViewById(R.id.id_fecha);
         equipo1=findViewById(R.id.id_equipo1);
-        equipo2=findViewById(R.id.id_puntos);
+        equipo2=findViewById(R.id.id_equipo2);
         puntos1=findViewById(R.id.id_puntos1);
-        puntos2=findViewById(R.id.id_ciudad);
+        puntos2=findViewById(R.id.id_puntos2);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 
@@ -48,6 +48,8 @@ public class InsertarPartido extends AppCompatActivity {
             Toast.makeText(this, "Ese Partido ya exixte", Toast.LENGTH_LONG).show();
         } else {
             insertar(jornada.getText().toString(), fecha.getText().toString(), equipo1.getText().toString(), equipo2.getText().toString(), puntos1.getText().toString(), puntos2.getText().toString());
+            limpiarCampos();
+            Toast.makeText(this, "Se a insertado el partido correctamente.", Toast.LENGTH_LONG).show();
         }
     }
     private void insertar(String jornada, String fecha, String equipo1, String equipo2, String puntos1, String puntos2) {
@@ -69,5 +71,13 @@ public class InsertarPartido extends AppCompatActivity {
 
     public void salir(View view) {
         startActivity(new Intent(InsertarPartido.this, Clasificacion.class));
+    }
+    private void limpiarCampos() {
+        jornada.setText("");
+        equipo1.setText("");
+        equipo2.setText("");
+        puntos1.setText("");
+        puntos2.setText("");
+        fecha.setText("");
     }
 }

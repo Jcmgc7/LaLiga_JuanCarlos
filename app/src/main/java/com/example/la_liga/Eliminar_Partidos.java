@@ -73,7 +73,7 @@ public class Eliminar_Partidos extends AppCompatActivity {
         String jornadaPartido = jornada.getText().toString();
         if (!jornadaPartido.isEmpty()) {
             db = helper.getWritableDatabase();
-            int filasEliminadas = db.delete("Partido", "jornada = ?", new String[]{jornadaPartido});
+            int filasEliminadas = db.delete("Partidos", "Jornada = ?", new String[]{jornadaPartido});
             if (filasEliminadas > 0) {
                 Toast.makeText(this, "Partido eliminado correctamente", Toast.LENGTH_SHORT).show();
                 limpiarCampos();

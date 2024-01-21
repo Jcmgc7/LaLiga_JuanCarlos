@@ -24,9 +24,9 @@ public class InsertarEquipo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insertar_equipo);
         nombre=findViewById(R.id.id_nombre);
-        ciudad=findViewById(R.id.id_ciudad);
+        ciudad=findViewById(R.id.id_puntos2);
         foto=findViewById(R.id.id_foto);
-        puntos=findViewById(R.id.id_puntos);
+        puntos=findViewById(R.id.id_equipo2);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 
@@ -43,6 +43,8 @@ public class InsertarEquipo extends AppCompatActivity {
             Toast.makeText(this, "Ese equipo ya exixte", Toast.LENGTH_LONG).show();
         }else{
             insertar(nombre.getText().toString(), ciudad.getText().toString(), foto.getText().toString(),puntos.getText().toString());
+            limpiarCampos();
+            Toast.makeText(this, "Se a insertado el equipo correctamente.", Toast.LENGTH_LONG).show();
         }
     }
     private void insertar(String nombre, String ciudad, String foto, String puntos) {
@@ -62,5 +64,11 @@ public class InsertarEquipo extends AppCompatActivity {
 
     public void salir(View view) {
         startActivity(new Intent(InsertarEquipo.this, Clasificacion.class));
+    }
+    private void limpiarCampos() {
+        nombre.setText("");
+        ciudad.setText("");
+        foto.setText("");
+        puntos.setText("");
     }
 }

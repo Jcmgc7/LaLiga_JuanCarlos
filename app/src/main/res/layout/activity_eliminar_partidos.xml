@@ -89,7 +89,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/id_puntos"
+            android:id="@+id/id_equipo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="164dp"
@@ -109,7 +109,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/id_ciudad"
+            android:id="@+id/id_puntos2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="165dp"
@@ -124,6 +124,46 @@
             android:layout_x="86dp"
             android:layout_y="351dp"
             android:text="Fecha"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="87dp"
+            android:layout_y="397dp"
+            android:text="Equipo1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="87dp"
+            android:layout_y="441dp"
+            android:text="Equipo2"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="86dp"
+            android:layout_y="492dp"
+            android:text="Puntos1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="86dp"
+            android:layout_y="538dp"
+            android:text="Puntos2"
             android:textColor="#000000"
             android:textSize="20sp" />
     </AbsoluteLayout>

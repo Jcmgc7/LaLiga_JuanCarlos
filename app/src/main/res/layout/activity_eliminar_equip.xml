@@ -68,7 +68,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/id_ciudad"
+            android:id="@+id/id_puntos2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="150dp"
@@ -78,7 +78,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/id_puntos"
+            android:id="@+id/id_equipo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="152dp"

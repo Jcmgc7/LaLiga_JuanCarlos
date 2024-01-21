@@ -22,7 +22,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <EditText
-            android:id="@+id/id_puntos"
+            android:id="@+id/id_equipo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="122dp"
@@ -48,7 +48,7 @@
             android:textColor="#C1FF8400" />
 
         <EditText
-            android:id="@+id/id_ciudad"
+            android:id="@+id/id_puntos2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="119dp"
