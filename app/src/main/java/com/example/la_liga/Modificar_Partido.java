@@ -1,6 +1,7 @@
 package com.example.la_liga;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Eliminar_Partidos extends AppCompatActivity {
+public class Modificar_Partido extends AppCompatActivity {
     EditText jornada;
     EditText equipo1;
     EditText equipo2;
@@ -24,7 +25,7 @@ public class Eliminar_Partidos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar_partidos);
+        setContentView(R.layout.activity_modificar_partidos);
 
         jornada = findViewById(R.id.id_nombre);
         equipo1 = findViewById(R.id.id_equipo1);
@@ -44,11 +45,11 @@ public class Eliminar_Partidos extends AppCompatActivity {
             }
         });
 
-        Button eliminarButton = findViewById(R.id.button3);
-        eliminarButton.setOnClickListener(new View.OnClickListener() {
+        Button modificarButton = findViewById(R.id.button3);
+        modificarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eliminarPartido();
+                modificarPartido();
             }
         });
     }
@@ -69,32 +70,30 @@ public class Eliminar_Partidos extends AppCompatActivity {
         }
     }
 
-    private void eliminarPartido() {
+    private void modificarPartido() {
         String jornadaPartido = jornada.getText().toString();
         if (!jornadaPartido.isEmpty()) {
             db = helper.getWritableDatabase();
-            int filasEliminadas = db.delete("Partido", "jornada = ?", new String[]{jornadaPartido});
-            if (filasEliminadas > 0) {
-                Toast.makeText(this, "Partido eliminado correctamente", Toast.LENGTH_SHORT).show();
-                limpiarCampos();
+
+            ContentValues values = new ContentValues();
+            values.put("Equipo1", equipo1.getText().toString());
+            values.put("Equipo2", equipo2.getText().toString());
+            values.put("Puntuacion_equipo1", puntos1.getText().toString());
+            values.put("Puntuacion_equipo2", puntos2.getText().toString());
+            values.put("Fecha", fecha.getText().toString());
+
+            int filasModificadas = db.update("Partido", values, "jornada = ?", new String[]{jornadaPartido});
+            if (filasModificadas > 0) {
+                Toast.makeText(this, "Partido modificado correctamente", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "No se pudo eliminar el partido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No se pudo modificar el partido", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Ingrese una jornada válida", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void limpiarCampos() {
-        jornada.setText("");
-        equipo1.setText("");
-        equipo2.setText("");
-        puntos1.setText("");
-        puntos2.setText("");
-        fecha.setText("");
-    }
-
     public void salir(View view) {
-        startActivity(new Intent(Eliminar_Partidos.this, Clasificacion.class));
+        startActivity(new Intent(Modificar_Partido.this, Clasificacion.class));
     }
 }
