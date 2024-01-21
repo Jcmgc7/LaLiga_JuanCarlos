@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +24,9 @@ public class Eliminar_Equipo extends AppCompatActivity {
         setContentView(R.layout.activity_eliminar_equip);
 
         nombreEquipo = findViewById(R.id.id_nombre);
-        ciudad = findViewById(R.id.id_puntos2);
+        ciudad = findViewById(R.id.id_ciudad);
         foto = findViewById(R.id.id_foto);
-        puntos = findViewById(R.id.id_equipo2);
+        puntos = findViewById(R.id.id_puntos);
 
         helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
@@ -76,6 +75,6 @@ public class Eliminar_Equipo extends AppCompatActivity {
     }
 
     public void salir(View view) {
-        startActivity(new Intent(EliminarEquipo.this, Clasificacion.class));
+        startActivity(new Intent(Eliminar_Equipo.this, Clasificacion.class));
     }
 }

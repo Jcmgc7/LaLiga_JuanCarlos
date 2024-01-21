@@ -58,7 +58,7 @@
             tools:text="BUSCAR" />
 
         <EditText
-            android:id="@+id/id_puntos2"
+            android:id="@+id/id_ciudad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="93dp"
@@ -68,7 +68,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/id_equipo2"
+            android:id="@+id/id_puntos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_x="89dp"

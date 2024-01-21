@@ -24,9 +24,9 @@ public class InsertarEquipo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insertar_equipo);
         nombre=findViewById(R.id.id_nombre);
-        ciudad=findViewById(R.id.id_puntos2);
+        ciudad=findViewById(R.id.id_ciudad);
         foto=findViewById(R.id.id_foto);
-        puntos=findViewById(R.id.id_equipo2);
+        puntos=findViewById(R.id.id_puntos);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 

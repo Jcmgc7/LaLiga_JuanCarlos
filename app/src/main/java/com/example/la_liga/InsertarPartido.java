@@ -30,9 +30,9 @@ public class InsertarPartido extends AppCompatActivity {
         jornada=findViewById(R.id.id_jornada);
         fecha=findViewById(R.id.id_fecha);
         equipo1=findViewById(R.id.id_equipo1);
-        equipo2=findViewById(R.id.id_equipo2);
+        equipo2=findViewById(R.id.id_puntos);
         puntos1=findViewById(R.id.id_puntos1);
-        puntos2=findViewById(R.id.id_puntos2);
+        puntos2=findViewById(R.id.id_ciudad);
         helper= new SQLiteHelper(this);
         db=helper.getWritableDatabase();
 
