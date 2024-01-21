@@ -95,5 +95,6 @@ public class Modificar_Partido extends AppCompatActivity {
         puntos1.setText("");
         puntos2.setText("");
         fecha.setText("");
+        jornada.setText("");
     }
 }
