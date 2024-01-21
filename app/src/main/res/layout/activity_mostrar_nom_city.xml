@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#EC0909"
     android:foregroundTint="#FD0000"
-    tools:context=".Modificar_Equipo">
+    tools:context=".Mostrar_city">
 
     <ImageView
         android:id="@+id/imageView"

@@ -54,6 +54,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".Mostrar_city"
+            android:exported="true" />
     </application>
 
 </manifest>

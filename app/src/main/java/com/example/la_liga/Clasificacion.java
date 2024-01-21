@@ -36,7 +36,7 @@ public class Clasificacion extends AppCompatActivity {
         ArrayList<String> datos = new ArrayList();
         do {
             cursor = db.rawQuery("SELECT * FROM Equipos WHERE _id = ?", new String[]{String.valueOf(x)});
-            if (cursor.moveToNext()) {  // Cambiado de moveToFirst a moveToNext
+            if (cursor.moveToFirst()) {  // Cambiado de moveToFirst a moveToNext
                 String nombreEquipo = cursor.getString(cursor.getColumnIndex("Nombre"));
                 String puntosEquipo = cursor.getString(cursor.getColumnIndex("Puntos"));
                 datos.add(x + "º Nombre:" + nombreEquipo + " | Puntos:" + puntosEquipo);
@@ -88,6 +88,10 @@ public class Clasificacion extends AppCompatActivity {
             return true;
         } else if (itemId == R.id.MostrarEquipos) {
             Intent i = new Intent(getApplicationContext(), Mostrar_Equipos.class);
+            startActivity(i);
+            return true;
+        } else if (itemId == R.id.MonstarCiudad) {
+            Intent i = new Intent(getApplicationContext(), Mostrar_city.class);
             startActivity(i);
             return true;
         }
