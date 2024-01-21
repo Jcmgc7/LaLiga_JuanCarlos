@@ -39,7 +39,7 @@ public class Eliminar_Partidos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String jornadaPartido = jornada.getText().toString();
-                buscarPartido(jornadaPartido);
+                buscar(jornadaPartido);
             }
         });
 
@@ -47,12 +47,12 @@ public class Eliminar_Partidos extends AppCompatActivity {
         eliminarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eliminarPartido();
+                eliminar();
             }
         });
     }
 
-    private void buscarPartido(String jornadaPartido) {
+    private void buscar(String jornadaPartido) {
         db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Partidos WHERE Jornada = ?", new String[]{jornadaPartido});
 
@@ -67,7 +67,7 @@ public class Eliminar_Partidos extends AppCompatActivity {
         }
     }
 
-    private void eliminarPartido() {
+    private void eliminar() {
         String jornadaPartido = jornada.getText().toString();
         if (!jornadaPartido.isEmpty()) {
             db = helper.getWritableDatabase();
