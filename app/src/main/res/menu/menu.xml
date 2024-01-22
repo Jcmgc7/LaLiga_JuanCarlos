@@ -21,9 +21,6 @@
         android:id="@+id/ModificarEquipos"
         android:title="Modificar Equipos" />
     <item
-        android:id="@+id/MostrarEquipos"
-        android:title="Mostrar Equipos" />
-    <item
         android:id="@+id/MonstarCiudad"
         android:title="Monstar Ciudad" />
 </menu>

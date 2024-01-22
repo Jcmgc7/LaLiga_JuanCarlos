@@ -23,7 +23,7 @@ public class Mostrar_city extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mostrar_city);
+        setContentView(R.layout.activity_mostrar_nom_city);
 
         listViewEquipos = findViewById(R.id.lista_equipos);
         helper = new SQLiteHelper(this);
@@ -44,26 +44,28 @@ public class Mostrar_city extends AppCompatActivity {
     @SuppressLint("Range")
     private void mostrarEquiposPorCiudad(String ciudad) {
         // Realizar la consulta para obtener los equipos de la ciudad
+        helper = new SQLiteHelper(this);
+        db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE Ciudad = ?", new String[]{ciudad});
 
         // Adaptar el cursor a tu ListView
         String[] from = {
-                "Foto",
-                "Nombre",
-                "Ciudad",
-                "Puntos"
+                EstructuraBBDD.EstructurauEquipos.COLUMN_NOMBRE2,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_CIUDAD,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_FOTO,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_PUNTOS
         };
 
         int[] to = {
-                R.id.imageViewItem,
-                R.id.textViewNombre,
-                R.id.textViewCiudad,
-                R.id.textViewPuntos
+                R.id.nombre,
+                R.id.ciudad,
+                R.id.imagen,
+                R.id.puntos,
         };
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(
                 this,
-                R.layout.lista_equipos,
+                R.layout.activity_lista_equipos,
                 cursor,
                 from,
                 to,
@@ -72,12 +74,6 @@ public class Mostrar_city extends AppCompatActivity {
 
         // Configurar el adaptador en el ListView
         listViewEquipos.setAdapter(adaptador);
-
-        // Manejo de clics en los elementos del ListView si es necesario
-        listViewEquipos.setOnItemClickListener((parent, view, position, id) -> {
-            // Acciones al hacer clic en un equipo si es necesario
-            Toast.makeText(this, "Item seleccionado: " + position, Toast.LENGTH_SHORT).show();
-        });
     }
 
     public void salir(View view) {

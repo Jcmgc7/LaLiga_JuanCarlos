@@ -73,10 +73,6 @@ public class Clasificacion extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), Modificar_Equipo.class);
             startActivity(i);
             return true;
-        } else if (itemId == R.id.MostrarEquipos) {
-            Intent i = new Intent(getApplicationContext(), Mostrar_Equipos.class);
-            startActivity(i);
-            return true;
         } else if (itemId == R.id.MonstarCiudad) {
             Intent i = new Intent(getApplicationContext(), Mostrar_city.class);
             startActivity(i);
