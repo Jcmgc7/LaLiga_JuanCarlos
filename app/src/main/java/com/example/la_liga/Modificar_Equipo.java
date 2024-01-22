@@ -24,7 +24,7 @@ public class Modificar_Equipo extends AppCompatActivity {
         setContentView(R.layout.activity_modificar_equip);
 
         nombreEquipo = findViewById(R.id.id_nombre);
-        ciudad = findViewById(R.id.id_puntos2);
+        ciudad = findViewById(R.id.id_ciudad);
         puntos = findViewById(R.id.id_equipo2);
 
         helper = new SQLiteHelper(this);

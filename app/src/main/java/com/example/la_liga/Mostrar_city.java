@@ -1,10 +1,13 @@
 package com.example.la_liga;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +18,9 @@ public class Mostrar_city extends AppCompatActivity {
     SQLiteHelper helper;
     ListView listViewEquipos;
 
+    TextView ciudad;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,22 +29,21 @@ public class Mostrar_city extends AppCompatActivity {
         listViewEquipos = findViewById(R.id.lista_equipos);
         helper = new SQLiteHelper(this);
         db = helper.getReadableDatabase();
+        ciudad = findViewById(R.id.id_ciudad);
 
         // Realizar la búsqueda y mostrar los resultados en el ListView
-        buscarEquipos();
     }
 
     private void buscarEquipos() {
-        String equipoBuscado = getIntent().getStringExtra("equipoBuscado");
+        String equipoBuscado =  ciudad.getText().toString();;
 
         // Modifica la consulta según tus necesidades
-        Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE Nombre = ? OR Ciudad = ?", new String[]{equipoBuscado, equipoBuscado});
+        Cursor cursor = db.rawQuery("SELECT * FROM Equipos WHERE Ciudad = ?", new String[]{equipoBuscado});
 
         // Adaptar el cursor a tu ListView
         String[] from = {
                 EstructuraBBDD.EstructurauEquipos.COLUMN_NOMBRE2 + " text, ",
                 EstructuraBBDD.EstructurauEquipos.COLUMN_CIUDAD + " text, ",
-                EstructuraBBDD.EstructurauEquipos.COLUMN_FOTO + " text, ",
                 EstructuraBBDD.EstructurauEquipos.COLUMN_PUNTOS + " text"
         };
 
@@ -46,7 +51,6 @@ public class Mostrar_city extends AppCompatActivity {
                 R.id.nombre,
                 R.id.ciudad,
                 R.id.puntos,
-                R.id.imagen
         };
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(
@@ -60,10 +64,12 @@ public class Mostrar_city extends AppCompatActivity {
 
         listViewEquipos.setAdapter(adaptador);
 
-        // Manejo de clics en los elementos del ListView si es necesario
         listViewEquipos.setOnItemClickListener((parent, view, position, id) -> {
-            // Acciones al hacer clic en un equipo si es necesario
             Toast.makeText(this, "Item seleccionado: " + position, Toast.LENGTH_SHORT).show();
         });
+    }
+
+    public void buscar(View view) {
+        buscarEquipos();
     }
 }

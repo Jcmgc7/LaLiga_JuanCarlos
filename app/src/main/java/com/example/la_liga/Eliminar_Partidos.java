@@ -30,7 +30,7 @@ public class Eliminar_Partidos extends AppCompatActivity {
         equipo1 = findViewById(R.id.id_equipo1);
         equipo2 = findViewById(R.id.id_equipo2);
         puntos1 = findViewById(R.id.id_puntos1);
-        puntos2 = findViewById(R.id.id_puntos2);
+        puntos2 = findViewById(R.id.id_ciudad);
         fecha = findViewById(R.id.id_fecha);
         helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();

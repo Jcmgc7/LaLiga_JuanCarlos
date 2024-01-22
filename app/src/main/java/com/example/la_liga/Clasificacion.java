@@ -12,7 +12,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,6 +25,8 @@ public class Clasificacion extends AppCompatActivity {
     SQLiteDatabase db;
     SQLiteHelper helper;
     Cursor cursor;
+    Cursor id;
+
     @Override
     @SuppressLint("Range")
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,26 +35,9 @@ public class Clasificacion extends AppCompatActivity {
 
         helper = new SQLiteHelper(this);
         db = helper.getWritableDatabase();
-        int x = 1;
-
-        ArrayList<String> datos = new ArrayList();
-        do {
-            cursor = db.rawQuery("SELECT * FROM Equipos WHERE _id = ?", new String[]{String.valueOf(x)});
-            if (cursor.moveToFirst()) {  // Cambiado de moveToFirst a moveToNext
-                String nombreEquipo = cursor.getString(cursor.getColumnIndex("Nombre"));
-                String puntosEquipo = cursor.getString(cursor.getColumnIndex("Puntos"));
-                datos.add(x + "º Nombre:" + nombreEquipo + " | Puntos:" + puntosEquipo);
-            }
-            x = x + 1;
-        } while (cursor.moveToNext());
-
-        // Crear el adaptador
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, datos);
-
-        // Obtener la referencia al ListView y establecer el adaptador
         listView = findViewById(R.id.lista);
         listView.setAdapter(adapter);
-
+        mostrarDatosEquipos();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,5 +83,50 @@ public class Clasificacion extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void mostrarDatosEquipos() {
+        // Obtén una instancia de la base de datos en modo lectura
+        helper = new SQLiteHelper(this);
+        db = helper.getReadableDatabase();
+        // Realiza una consulta para obtener los datos de la tabla "equipos"
+        Cursor cursor = db.query(
+                EstructuraBBDD.EstructurauEquipos.TABLE_EQUIPO,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        // Configura el adaptador con el cursor
+        String[] from = {
+                EstructuraBBDD.EstructurauEquipos.COLUMN_NOMBRE2,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_CIUDAD,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_FOTO,
+                EstructuraBBDD.EstructurauEquipos.COLUMN_PUNTOS
+        };
+
+        int[] to = {
+                R.id.nombre,
+                R.id.ciudad,
+                R.id.imagen,
+                R.id.puntos,
+        };
+
+        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(
+                this,
+                R.layout.activity_lista_equipos,
+                cursor,
+                from,
+                to,
+                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
+        );
+
+        // Configura el adaptador en el ListView
+        listView.setAdapter(adaptador);
+
+        // Cierra la base de datos después de usarla
+        db.close();
     }
 }
